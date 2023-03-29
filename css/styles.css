@@ -156,14 +156,19 @@ img {
 
 .hero {
     background: var(--grey);
+    width: 1440px;
+    margin: 0 auto;
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/hero/people-office.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .hero-container {
     display: flex;
     flex-direction: column;
     padding: 188px 316px;
-    background-image: url("../images/hero/people-office.jpg");
+   /* background-image: url("../images/hero/people-office.jpg")/*, linear-gradient(rgba(46, 47, 66, 0.7)*/;
     background-position: center;
-    
 }
 
 .hero-title {
@@ -229,7 +234,11 @@ img {
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 4px;
-box-shadow: <x-offset> <y-offset> <blur> <spread> <color>,
+}
+
+.functions-item::before:is(:hover, :focus) {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), black;
+
 }
 
 .icon-antenna::before {
