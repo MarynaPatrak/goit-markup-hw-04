@@ -201,8 +201,7 @@ img {
     height: 56px;
 }
 
-.hero-btn:hover,
-.hero-btn:focus {
+.hero-btn:is(:hover, :focus) {
     background-color: var(--ocean);
 }
 
@@ -242,19 +241,19 @@ img {
 }
 
 .icon-antenna::before {
-    background-image: url("../images/functions/antenna.png");
+    background-image: url("../images/functions/antenna.svg");
 }
 
 .icon-clock::before {
-    background-image: url("../images/functions/clock.png");
+    background-image: url("../images/functions/clock.svg");
 }
 
 .icon-diagram::before {
-    background-image: url("../images/functions/diagram.png");
+    background-image: url("../images/functions/diagram.svg");
 }
 
 .icon-astronaut::before {
-    background-image: url("../images/functions/astronaut.png");
+    background-image: url("../images/functions/astronaut.svg");
 }
 
 .functions-item-title {
@@ -386,15 +385,11 @@ img {
 }
 
 .team-soc-icon {
-    fill: white;
+    fill: var(--cloud);
 }
 
 .team-soc-link:is(:hover, :focus) {
-    background-color: white;
-}
-
-.team-soc-link > .team-soc-icon:is(:hover, :focus) {
-    fill: var(--iris);
+    background-color: var(--ocean);
 }
 
 /*---------------CUSTOMERS---------------*/
@@ -422,12 +417,26 @@ img {
     margin-bottom: 72px;
 }
 
-.customers-item {
-
+.customers-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 168px;
     height: 88px;
     border-radius: 4px;
     border: 2px solid var(--light-slate);
+}
+
+.customers-icon {
+    fill: var(--light-slate);
+}
+
+.customers-link:is(:hover, :focus) {
+    border-color: var(--ocean);
+}
+
+.customers-link:is(:hover, :focus) .customers-icon {
+    fill: var(--ocean);
 }
 
 /*---------------FOOTER---------------*/
@@ -479,6 +488,29 @@ img {
     gap: 16px;
 }
 
+.footer-soc-item {
+    width: 40px;
+    height: 40px;
+}
+
+.footer-soc-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--iris);
+}
+
+.footer-soc-icon {
+    fill: var(--cloud);
+}
+
+.footer-soc-link:is(:hover, :focus) {
+    background-color: var(--green);
+}
+
 /*---------------PORTFOLIO---------------*/
 
 .header-portfolio {
@@ -500,6 +532,7 @@ img {
 }
 
 .portfolio-btn {
+    display: block;
     padding: 12px 24px 12px 24px;
     font-family: "Roboto", sans-serif;
     font-weight: 500;
@@ -517,6 +550,7 @@ img {
 .portfolio-btn:focus {
     color: white;
     background-color: var(--ocean);
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.12);
 }
 
 .portfolio-pics {
@@ -540,6 +574,14 @@ img {
 
 .portfolio-item-pic:nth-last-child(-n+3) {
     margin-bottom: 0;
+}
+
+.portfolio-link {
+    display: block;
+}
+
+.portfolio-link:is(:hover, :focus) {
+    box-shadow: 0px 2px 2px rgba(46, 47, 66, 0.16);
 }
 
 .portfolio-subtitle {
